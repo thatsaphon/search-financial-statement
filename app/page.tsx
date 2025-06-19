@@ -38,7 +38,8 @@ export default function Home() {
             {searchResults.map((result) => (
               <li key={result.Value}>
                 <Link
-                  href={`https://market.sec.or.th/public/idisc/th/FinancialReport/FS-${result.Value}/20150101-20250619`}
+                  // href={`https://market.sec.or.th/public/idisc/th/FinancialReport/ALL-${result.Value}/20240101-20250619`}
+                  href={`https://market.sec.or.th/public/idisc/th/Viewmore/fs-norm?uniqueIDReference=${result.Value}&dateFrom=20150101&dateTo=20250619`}
                   target={'_blank'}>
                   {result.Text}
                 </Link>
