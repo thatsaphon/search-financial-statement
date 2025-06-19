@@ -35,19 +35,21 @@ export default function Home() {
       {searchResults.length > 0 && (
         <div>
           <ul>
-            {searchResults.map((result) => (
-              <li key={result.Value}>
-                <Link
-                  // href={`https://market.sec.or.th/public/idisc/th/FinancialReport/ALL-${result.Value}/20240101-20250619`}
-                  href={`https://market.sec.or.th/public/idisc/th/Viewmore/fs-norm?uniqueIDReference=${result.Value}&dateFrom=20150101&dateTo=20250619`}
-                  target={'_blank'}>
-                  {result.Text}
-                </Link>
-                {/* <Link href={'/' + result.Value} target={'_blank'}>
+            {searchResults
+              .filter((result) => result.Flag)
+              .map((result) => (
+                <li key={result.Value}>
+                  <Link
+                    // href={`https://market.sec.or.th/public/idisc/th/FinancialReport/ALL-${result.Value}/20240101-20250619`}
+                    href={`https://market.sec.or.th/public/idisc/th/Viewmore/fs-norm?uniqueIDReference=${result.Value}&dateFrom=20150101&dateTo=20250619`}
+                    target={'_blank'}>
+                    {result.Text}
+                  </Link>
+                  {/* <Link href={'/' + result.Value} target={'_blank'}>
                   {result.Text}
                 </Link> */}
-              </li>
-            ))}
+                </li>
+              ))}
           </ul>
         </div>
       )}
